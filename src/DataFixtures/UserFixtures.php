@@ -28,7 +28,7 @@ class UserFixtures extends Fixture
             ],
            
                 
-            ],
+           
            
         ];
 
@@ -36,10 +36,10 @@ class UserFixtures extends Fixture
             $user = new User();
             $user
                 ->setEmail($userdatas['email'])
-                ->setPassword($this->passwordHasher->hashPassword(
-                    $user,$userdatas['password'])
+                ->setPassword($this->passwordHasher->hashPassword($user,$userdatas['password']));
                
-
+                    $manager->persist($user);
+                }
         $manager->flush();
     }
 }
