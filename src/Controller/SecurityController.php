@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Form\RegistrationType;
 
 
 class SecurityController extends AbstractController
@@ -64,7 +65,7 @@ class SecurityController extends AbstractController
         $em->persist($user);
         $em->flush();
         $this->addFlash('success', 'Un email vous a été envoyé');
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('app_home');
     }
 
 
