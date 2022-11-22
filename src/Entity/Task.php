@@ -70,7 +70,7 @@ class Task
         return $this;
     }
 
-    public function isIsDone(): ?bool
+    public function getIsDone(): ?bool
     {
         return $this->isDone;
     }
